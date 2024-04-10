@@ -1,0 +1,28 @@
+
+
+
+.slide {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-position:  center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slide1{
+    background-image: url("../assets/single-home.jpg");
+}
+
+.slide2{
+    background-image: url("../assets/town-house.jpg");
+}
+
+.slide3{
+    background-image: url("../assets/vaction-home.jpg");
+}
+
+.slide4{
+    background-image: url("../assets/student-home.jpg");
+}

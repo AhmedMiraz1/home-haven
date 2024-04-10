@@ -1,13 +1,21 @@
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { Outlet } from "react-router-dom";
+
 
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className="font-poppins">
           
            <Navbar/> 
-       
-             <h1>this is root </h1>
+           
+      <div className="container mx-auto px-8 min-h-[calc(100vh-437px)]">
+      <Outlet/>
+      </div>
+           
+             <Footer/>
+            
         </div>
     );
 };
