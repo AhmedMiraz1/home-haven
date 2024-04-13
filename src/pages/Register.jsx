@@ -94,16 +94,17 @@ const Register = () => {
             </span>
           </label>
           <input
-            type={showPassword ? "text": "password"}
+            type={showPassword ? "text" : "password"}
             name="password"
             placeholder="Password"
             className="input input-bordered relative"
             required
           />
-          <span className="absolute top-[80%] right-[20%] md:right-[29%] md:top-[81%] lg:top-[53%] lg:right-[37%]" onClick={()=> setShowPassword(!showPassword)}>
-            {
-             showPassword ? <FaEyeSlash/> : <FaEye/>
-          }
+          <span
+            className="absolute top-[80%] right-[20%] md:right-[29%] md:top-[81%] lg:top-[53%] lg:right-[37%]"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? <FaEyeSlash /> : <FaEye />}
           </span>
         </div>
         <div className="form-control mt-6">

@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "image": "https://i.ibb.co/cJ2ys1J/family.jpg",
+    "title": "Cozy Single-family Home",
+    "segment_name": "Single-family homes",
+    "description": "This cozy single-family home offers a charming ambiance with spacious living areas and a beautifully landscaped backyard. Perfect for families seeking comfort and tranquility, it features modern amenities and ample natural light. Situated in a peaceful neighborhood, it provides a serene retreat from the bustle of city life. With a generous floor plan spanning 2000 sq ft, there's plenty of room for relaxation and entertainment. The living room serves as the heart of the home, ideal for gatherings and quality time with loved ones. The well-equipped kitchen is a chef's delight, complete with sleek appliances and ample counter space. Step outside to the backyard oasis, where lush greenery and a patio beckon for outdoor enjoyment. This home is a haven for those seeking a harmonious blend of comfort and style.",
+    "price": 350000,
+    "status": "sale",
+    "area": "2000 sq ft",
+    "location": "1234 Oak Street, City, State",
+    "facilities": ["living room", "kitchen", "backyard"]
+  },
+  {
+    "id": 2,
+    "image": "https://i.ibb.co/LkRsgYS/city.jpg",
+    "title": "Modern Townhouse",
+    "segment_name": "Townhouses",
+    "description": "Welcome to modern townhouse living at its finest. This sleek and stylish residence boasts contemporary design elements and premium amenities throughout. With an open-concept layout spanning 1800 sq ft, it offers a seamless flow of space perfect for both relaxation and entertainment. The spacious living room serves as a welcoming gathering spot, while the gourmet kitchen is a culinary enthusiast's dream, featuring top-of-the-line appliances and sleek countertops. Upstairs, the bedrooms provide peaceful retreats, each adorned with ample natural light and modern finishes. Outside, a private garage offers convenient parking and additional storage space. Nestled in a desirable location, this townhouse offers the epitome of urban living, combining sophistication with convenience.",
+    "price": 2000000,
+    "status": "sale",
+    "area": "1800 sq ft",
+    "location": "5678 Maple Avenue, City, State",
+    "facilities": ["living room", "kitchen", "garage"]
+  },
+  {
+    "id": 3,
+    "image": "https://i.ibb.co/RSYb6mx/downtown.jpg",
+    "title": "Luxury Apartment",
+    "segment_name": "Apartments",
+    "description": "Indulge in the luxury of upscale apartment living with this exquisite residence. Offering breathtaking views and an array of on-site amenities, it promises a lifestyle of sophistication and comfort. The spacious layout encompasses 1500 sq ft of living space, featuring a stylish living room and a gourmet kitchen equipped with state-of-the-art appliances. Relax and unwind in the resort-style swimming pool or maintain your fitness routine in the well-appointed gym. With meticulous attention to detail and premium finishes throughout, this apartment is a true sanctuary in the heart of the city. Located in a vibrant neighborhood, it provides easy access to dining, shopping, and entertainment options. Experience the pinnacle of urban living with this luxurious apartment retreat.",
+    "price": 2500,
+    "status": "rent",
+    "area": "1500 sq ft",
+    "location": "910 Pine Street, City, State",
+    "facilities": ["living room", "swimming pool", "gym"]
+  },
+  {
+    "id": 4,
+    "image": "https://i.ibb.co/qCX4MXQ/student.jpg",
+    "title": "Student Housing",
+    "segment_name": "Student housing",
+    "description": "Designed with the needs of students in mind, this conveniently located housing option offers a comfortable and supportive environment for academic success. Featuring a thoughtful layout with study areas and communal spaces, it fosters a sense of community and collaboration among residents. The living room provides a welcoming space for relaxation and socializing, while the designated study areas offer a quiet retreat for focused work. With laundry facilities on-site, chores are made easy, allowing students to focus on their studies and extracurricular activities. Located within close proximity to campus, this housing option provides convenient access to classes, libraries, and campus events. Experience the benefits of student living with this modern and well-appointed residence.",
+    "price": 1200,
+    "status": "rent",
+    "area": "1200 sq ft",
+    "location": "123 University Avenue, City, State",
+    "facilities": ["living room", "study area", "laundry room"]
+  },
+  {
+    "id": 5,
+    "image": "https://i.ibb.co/6JNdxHQ/carol-highsmith-s-america-wr-Kq-NLXNhs-unsplash.jpg",
+    "title": "Senior Living Community",
+    "segment_name": "Senior living communities",
+    "description": "Embrace the golden years with this vibrant senior living community offering an array of activities and support services tailored to your needs. From fitness classes to social events, there's always something exciting happening within the community. The spacious living room serves as a hub for socializing and connecting with neighbors, while the community center hosts a variety of events and gatherings. Step outside to the beautifully landscaped garden, where you can enjoy leisurely strolls or peaceful moments of reflection. With amenities designed to enhance your quality of life, this community provides the perfect balance of independence and support. Experience the joys of retirement living with this welcoming and inclusive community.",
+    "price": 800,
+    "status": "rent",
+    "area": "2200 sq ft",
+    "location": "456 Elderly Lane, City, State",
+    "facilities": ["living room", "community center", "garden"]
+  },
+  {
+    "id": 6,
+    "image": "https://i.ibb.co/Wscvttj/beach.jpg",
+    "title": "Seaside Vacation Rental",
+    "segment_name": "Vacation rentals",
+    "description": "Escape to paradise with this charming vacation rental nestled along the picturesque coastline. Offering breathtaking ocean views and access to a range of outdoor activities, it's the perfect destination for a relaxing getaway. The spacious living room features panoramic windows that frame the stunning seascape, creating an inviting space for relaxation and entertainment. Step outside to the private patio, where you can soak up the sun or enjoy al fresco dining with loved ones. Take a refreshing dip in the sparkling swimming pool or explore the nearby beach for a day of sun and surf. With its idyllic location and modern amenities, this vacation rental provides everything you need for a memorable seaside retreat.",
+    "price": 3000,
+    "status": "rent",
+    "area": "1600 sq ft",
+    "location": "789 Beachfront Road, City, State",
+    "facilities": ["living room", "swimming pool", "patio"]
+  }
+]

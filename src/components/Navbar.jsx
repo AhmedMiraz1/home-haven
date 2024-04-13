@@ -16,18 +16,14 @@ const Navbar = () => {
             <NavLink to='/' className={({isActive})=> isActive? 'text-[#23BE0A] font-bold ': 'font-bold' }>
             Home
           </NavLink>
-          <NavLink to='/about' className={({isActive})=> isActive? 'text-[#23BE0A] font-bold ': 'font-bold' }>
-          About
+          <NavLink to='/updateProfile' className={({isActive})=> isActive? 'text-[#23BE0A] font-bold ': 'font-bold' }>
+          Update Profile
           </NavLink>
           <NavLink to='/blog' className={({isActive})=> isActive? 'text-[#23BE0A] font-bold ': 'font-bold' }>
           Blog
           </NavLink>
-          <NavLink to='/contact' className={({isActive})=> isActive? 'text-[#23BE0A] font-bold ': 'font-bold' }>
-         Contact
-          </NavLink>
-          <NavLink to='/updateProfile' className={({isActive})=> isActive? 'text-[#23BE0A] font-bold ': 'font-bold' }>
-          Update Profile
-          </NavLink>
+         
+          
             </ul>
           </div>
           <Link to= '/' className="btn btn-ghost text-lg md:text-xl lg:text-2xl flex gap-0 text-primary font-medium md:font-semibold lg:font-extrabold  animate__animated animate__zoomIn animate__delay-1000">Haven<span className="text-pink-500">Homes</span></Link>
@@ -37,17 +33,12 @@ const Navbar = () => {
           <NavLink to='/' className={({isActive})=> isActive? 'text-[#23BE0A] font-bold  text-xl': 'font-bold text-xl' }>
             Home
           </NavLink>
-          <NavLink to='/about' className={({isActive})=> isActive? 'text-[#23BE0A] font-bold text-xl ': 'font-bold text-xl' }>
-          About
+
+          <NavLink to='/updateProfile' className={({isActive})=> isActive? 'text-[#23BE0A] font-bold text-xl ': 'font-bold text-xl' }>
+          Update Profile
           </NavLink>
           <NavLink to='/blog' className={({isActive})=> isActive? 'text-[#23BE0A] font-bold text-xl ': 'font-bold text-xl' }>
           Blog
-          </NavLink>
-          <NavLink to='/contact' className={({isActive})=> isActive? 'text-[#23BE0A] font-bold text-xl ': 'font-bold text-xl' }>
-         Contact
-          </NavLink>
-          <NavLink to='/updateProfile' className={({isActive})=> isActive? 'text-[#23BE0A] font-bold text-xl ': 'font-bold text-xl' }>
-          Update Profile
           </NavLink>
            
           </ul>
