@@ -1,11 +1,17 @@
+import { useEffect, useState } from "react";
 import Banner from "../components/Banner";
-import { useLoaderData} from "react-router-dom";
+
 import HouseCard from "../components/HouseCard";
 
 
 const Home = () => {
-    const houses = useLoaderData()
-    console.log(houses);
+   
+ const [houses, setHouses]=useState([])
+ useEffect(() => {
+    fetch("residential.json")
+      .then((res) => res.json())
+      .then((data) => setHouses(data));
+  }, []);
     return (
         <div>
             <Banner/>

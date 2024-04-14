@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 const HouseCard = ({ house }) => {
-  const { image, title, price, status, area, location, description } = house;
+  const { image, title, price, status, area, location, description, id } = house;
   return (
     <div>
       <div className=" p-6 rounded-lg h-full shadow-2xl">
@@ -24,7 +26,9 @@ const HouseCard = ({ house }) => {
             <p className="my-6"> Location : {location}</p>
           </div>
           <div className="text-center">
+            <Link to ={`/house/${id}`}>
             <button className="btn btn-outline bg-green-500 border-none text-white text-lg md:text-xl font-medium md:font-semibold">View Property</button>
+            </Link>
           </div>
         </div>
       </div>
