@@ -1,9 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import 'animate.css';
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
     
 
 
 const Navbar = () => {
+  const {user, logOut} = useContext(AuthContext)
    
     return (
         <div className="navbar bg-blue-100 px-8 md:px-12 lg:px-16 shadow-lg">
@@ -45,8 +48,37 @@ const Navbar = () => {
         </div>
         
         <div className="navbar-end">
+          {
+            user? <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar ">
+                <div className="w-10 rounded-full">
+                  <img src={user?.photoURl || "https://i.ibb.co/G2TCGVY/mehedi1-Photo-Room-1.png"} alt="Mehedi" />
+
+                </div>
+              </label>
+              <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[3]  shadow-base-100 bg-slate-300 rounded-box w-52 border ">
+                <li  className="border px-6 py-2  rounded-xl">
+                 <button className="btn btn-sm btn-ghost  ">{user?.displayName || "User Not found"} </button>
+                </li>
+                <li className="my-4  border px-6 py-2  rounded-xl">
+                  <button className="btn btn-sm btn-ghost  ">
+                    Update profile
+
+                  </button>
+                </li>
+                <li  className="border px-6 py-2 rounded-xl">
+                 <button onClick={logOut}
+                  className="btn btn-sm btn-ghost ">Logout </button>
+                </li>
+
+              </ul>
+
+            </div>
+            :
+            <Link to= '/login' className="btn bg-blue-100 border-none btn-outline text-lg md:text-xl lg:text-2xl md:font-bold">LogIn</Link>
+          }
         
-          <Link to= '/login' className="btn">LogIn</Link>
+          
         </div>
       </div>
     );

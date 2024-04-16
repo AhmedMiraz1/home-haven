@@ -1,5 +1,5 @@
 import { useParams, useLoaderData } from "react-router-dom";
-// import { useLoaderData} from "react-router-dom";
+import 'animate.css';
 
 const HouseDetails = () => {
   const houseDetails = useLoaderData();
@@ -22,11 +22,11 @@ const HouseDetails = () => {
   } = houseDetail;
   return (
     <div>
-      <div className="flex flex-col md:flex-row gap-8 justify-between my-24 p-8 shadow-2xl rounded-xl">
+      <div className="flex flex-col gap-8 justify-between my-24 p-8 shadow-2xl rounded-xl">
         <div className="w-full  animate__animated animate__animate__backInLeft animate__delay-1000">
-          <img className="rounded-xl shadow-2xl p-2  h-full md:h-[53vh]" src={image} alt="" />
+          <img className="rounded-xl shadow-2xl p-2  h-full  animate__animated animate__backInLeft animate__delay-2000" src={image} alt="" />
         </div>
-        <div className="w-full  h-full md:h-[53vh]">
+        <div className="w-full  h-full  animate__animated animate__backInRight animate__delay-2000">
             <h1 className="text-xl md:text-2xl lg:text-3xl font-normal md:font-medium  lg:font-bold text-green-800">{title}</h1>
             <p className="text-lg md:text-xl text-gray-600 my-6">{description}</p>
             <div className="flex justify-between my-6">

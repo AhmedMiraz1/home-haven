@@ -1,15 +1,24 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,  useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
   const [registerError, setRegisterError] = useState("");
   const [success, setSuccess] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+
+  //navigation
+
+  const navigate = useNavigate();
+ 
   const handelRegister = (e) => {
     e.preventDefault();
+
     console.log(e.currentTarget);
     const form = new FormData(e.currentTarget);
     const name = form.get("name");
@@ -19,33 +28,58 @@ const Register = () => {
     console.log(name, photo, email, password);
 
     if (password.length < 6) {
-      setRegisterError("password should be at least 6 characters");
+      setRegisterError(
+        "password should be at least 6 characters",
+        toast.error("password should be at least 6 characters")
+      );
       return;
     } else if (!/[A-Z]/.test(password)) {
       setRegisterError(
-        "Your password should have at least one upperCase character"
+        "Your password should have at least one upperCase character",
+        toast.error(
+          "Your password should have at least one upperCase character"
+        )
       );
       return;
     } else if (!/[a-z]/.test(password)) {
       setRegisterError(
-        "Your password should have at least one lowerCase character"
+        "Your password should have at least one lowerCase character",
+        toast.error(
+          "Your password should have at least one lowerCase character"
+        )
       );
       return;
     }
     setRegisterError("");
+
     setSuccess("");
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
-        setSuccess("User created successfully", result.user);
+
+        // update profile 
+        updateUserProfile(name, photo)
+        .then(() => {
+          navigate("/");
+        });
+
+        const user = result.user;
+        setSuccess(
+          "User created successfully",
+          toast("User created successfully"),
+          user
+        );
       })
       .catch((error) => {
-        setRegisterError("You have already registered", error.message);
+        setRegisterError(
+          "You have already registered",
+          toast.error("You have already registered"),
+          error.message
+        );
       });
   };
   return (
     <div className="border-4 w-full md:w-3/4 lg:w-1/2 mx-auto my-20 rounded-xl bg-stone-300 shadow-2xl shadow-blue-200 ">
-      <h1 className="text-center text-xl md:text-2xl lg:text-3xl font-bold mt-8 underline">
+      <h1 className="text-center text-xl md:text-2xl lg:text-3xl font-bold mt-8 underline divider px-8">
         Please Register{" "}
       </h1>
       <form onSubmit={handelRegister} className="card-body ">
@@ -101,7 +135,7 @@ const Register = () => {
             required
           />
           <span
-            className="absolute top-[80%] right-[20%] md:right-[29%] md:top-[81%] lg:top-[53%] lg:right-[37%]"
+            className="absolute top-[80%] right-[20%] md:right-[29%] md:top-[81%] lg:top-[52%] lg:right-[37%]"
             onClick={() => setShowPassword(!showPassword)}
           >
             {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -129,6 +163,7 @@ const Register = () => {
           Login
         </Link>
       </p>
+      <ToastContainer />
     </div>
   );
 };
