@@ -22,9 +22,11 @@ const Navbar = () => {
           <NavLink to='/updateProfile' className={({isActive})=> isActive? 'text-[#23BE0A] font-bold ': 'font-bold' }>
           Update Profile
           </NavLink>
-          <NavLink to='/blog' className={({isActive})=> isActive? 'text-[#23BE0A] font-bold ': 'font-bold' }>
+          {
+          user &&  <NavLink to='/blog' className={({isActive})=> isActive? 'text-[#23BE0A] font-bold text-xl ': 'font-bold text-xl' }>
           Blog
           </NavLink>
+         }
          
           
             </ul>
@@ -40,9 +42,11 @@ const Navbar = () => {
           <NavLink to='/updateProfile' className={({isActive})=> isActive? 'text-[#23BE0A] font-bold text-xl ': 'font-bold text-xl' }>
           Update Profile
           </NavLink>
-          <NavLink to='/blog' className={({isActive})=> isActive? 'text-[#23BE0A] font-bold text-xl ': 'font-bold text-xl' }>
+         {
+          user &&  <NavLink to='/blog' className={({isActive})=> isActive? 'text-[#23BE0A] font-bold text-xl ': 'font-bold text-xl' }>
           Blog
           </NavLink>
+         }
            
           </ul>
         </div>
@@ -61,10 +65,10 @@ const Navbar = () => {
                  <button className="btn btn-sm btn-ghost  ">{user?.displayName || "User Not found"} </button>
                 </li>
                 <li className="my-4  border px-6 py-2  rounded-xl">
-                  <button className="btn btn-sm btn-ghost  ">
+                  <Link to="/updateProfile" className="btn btn-sm btn-ghost  ">
                     Update profile
 
-                  </button>
+                  </Link>
                 </li>
                 <li  className="border px-6 py-2 rounded-xl">
                  <button onClick={logOut}

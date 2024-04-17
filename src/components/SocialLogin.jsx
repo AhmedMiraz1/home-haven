@@ -7,7 +7,7 @@ const SocialLogin = () => {
   const { googleLogin, githubLogin } = useContext(AuthContext);
 
   //navigation
-  
+
   const navigate = useNavigate()
   const location = useLocation()
   const form = location?.state || '/'
@@ -16,7 +16,6 @@ const SocialLogin = () => {
     socialProvider()
     .then(result => {
         const user =result.user
-        console.log(user);
         if(user){
             navigate(form)
         }

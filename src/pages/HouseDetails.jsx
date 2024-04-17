@@ -1,5 +1,6 @@
 import { useParams, useLoaderData } from "react-router-dom";
 import 'animate.css';
+import { Helmet } from "react-helmet-async";
 
 const HouseDetails = () => {
   const houseDetails = useLoaderData();
@@ -22,6 +23,12 @@ const HouseDetails = () => {
   } = houseDetail;
   return (
     <div>
+       <Helmet>
+            <title>
+            House Details
+            </title>
+           
+          </Helmet>
       <div className="flex flex-col gap-8 justify-between my-24 p-8 shadow-2xl rounded-xl">
         <div className="w-full  animate__animated animate__animate__backInLeft animate__delay-1000">
           <img className="rounded-xl shadow-2xl p-2  h-full  animate__animated animate__backInLeft animate__delay-2000" src={image} alt="" />

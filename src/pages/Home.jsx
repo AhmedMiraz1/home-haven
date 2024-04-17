@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Banner from "../components/Banner";
 
 import HouseCard from "../components/HouseCard";
+import { Helmet } from "react-helmet-async";
 
 
 const Home = () => {
@@ -14,6 +15,12 @@ const Home = () => {
   }, []);
     return (
         <div>
+          <Helmet>
+            <title>
+              Home
+            </title>
+           
+          </Helmet>
             <Banner/>
 
             <div className="text-center my-24">

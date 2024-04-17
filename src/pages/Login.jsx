@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 import SocialLogin from "../components/SocialLogin";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -35,6 +36,7 @@ const Login = () => {
           navigate(location?.state || '/' )
         }
         setSuccess( 'LogIn successfully',toast("LogIn successfully"),user);
+        e.target.reset()
       })
       .catch((error) => {
         console.log(error);
@@ -43,6 +45,11 @@ const Login = () => {
   };
   return (
     <div className="border-4 w-full md:w-3/4 lg:w-1/2 mx-auto my-20 rounded-xl bg-stone-300 shadow-2xl shadow-blue-200 ">
+      <Helmet>
+        <title>
+          Login
+        </title>
+      </Helmet>
       <h1 className="text-center text-xl md:text-2xl lg:text-3xl font-bold mt-8 underline divider px-8">
         Please LogIn
       </h1>

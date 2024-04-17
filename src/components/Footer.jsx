@@ -8,7 +8,7 @@ const Footer = () => {
     <p className="font-bold text-lg md:text-xl  my-4">
     HavenHomes: Your Sanctuary in Every Step <br/>It has been serving you since 2010
     </p> 
-    <p className="text-sm md:text-lg lg:text-xl">Copyright © 2024 - All right reserved</p>
+    <p className="text-sm md:text-lg lg:text-xl">Copyright © 2024 - All right reserved HavenHomes</p>
   </aside> 
   <nav>
     <div className="grid grid-flow-col gap-6">

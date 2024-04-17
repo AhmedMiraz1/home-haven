@@ -31,12 +31,12 @@ const router = createBrowserRouter([
            
             {
                 path: '/blog',
-                element: <Blog/>
+                element: <PrivateRoute><Blog/></PrivateRoute>
             },
             
             {
                 path: '/updateProfile',
-                element: <UpdateProfile/>
+                element:<PrivateRoute> <UpdateProfile/></PrivateRoute>
             },
             {
                 path: '/login',
