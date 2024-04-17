@@ -16,6 +16,6 @@
 
 ## Npm package :
 - 1. AOS Animation package.
-- 2. Animate.cc package.
+- 2. Animate.css package.
 - 3. Swiper slider package. 
 

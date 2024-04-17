@@ -1,24 +1,66 @@
 import { FaFacebook, FaGithub, FaTwitter } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
-    return (
-        <footer className="footer footer-center p-10 bg-neutral text-primary-content">
-  <aside>
-    <h1 className=" text-lg md:text-xl lg:text-2xl flex gap-0 text-green-500 font-medium md:font-semibold lg:font-extrabold  animate__animated animate__zoomIn animate__delay-2000 my-8 underline ">Haven<span  className="text-pink-500">Homes</span></h1>
-    <p className="font-bold text-lg md:text-xl  my-4">
-    HavenHomes: Your Sanctuary in Every Step <br/>It has been serving you since 2010
-    </p> 
-    <p className="text-sm md:text-lg lg:text-xl">Copyright © 2024 - All right reserved HavenHomes</p>
-  </aside> 
-  <nav>
-    <div className="grid grid-flow-col gap-6">
-     <p className="text-2xl"><FaGithub/></p>
-     <p className="text-2xl"><FaFacebook/></p>
-     <p className="text-2xl"><FaTwitter/></p>
-    </div>
-  </nav>
-</footer>
-    );
+  return (
+    <footer className="p-10 bg-[#1A1919] text-[#FFFFFF] mb-0">
+      <div className="container mx-auto px-8  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 justify-between ">
+        <nav className="flex flex-col">
+        <Link to= '/' className="btn btn-ghost text-xl md:text-2xl lg:text-3xl flex gap-0 text-primary font-medium md:font-semibold lg:font-extrabold  animate__animated animate__zoomIn animate__delay-2000">Haven<span className="text-pink-500">Homes</span></Link>
+          <a className="link link-hover my-5">
+            There are many variations of passages of Lorem Ipsum , but the
+            majority have suffered alteration in some form.
+          </a>
+          <div className="flex gap-8 text-2xl text-blue-500">
+            <span>
+              <FaFacebook />
+            </span>
+            <span>
+              <FaGithub />
+            </span>
+            <span>
+              <FaTwitter />
+            </span>
+          </div>
+        </nav>
+        <nav className="flex flex-col">
+          <h6 className="footer-title">Company</h6>
+          <a className="link link-hover">Home</a>
+          <a className="link link-hover">Update Profile</a>
+          <a className="link link-hover">Login</a>
+          <a className="link link-hover">Register</a>
+        </nav>
+        <nav className="flex flex-col">
+          <h6 className="footer-title">Product</h6>
+          <a className="link link-hover">Houses</a>
+          <a className="link link-hover">Plans & Pricing</a>
+          <a className="link link-hover">Customers</a>
+          <a className="link link-hover">Integrations</a>
+        </nav>
+        <nav className="flex flex-col">
+          <h6 className="footer-title">Support</h6>
+          <a className="link link-hover">Help Desk</a>
+          <a className="link link-hover">Sales</a>
+          <a className="link link-hover">Become a Partner</a>
+          <a className="link link-hover">Developers</a>
+        </nav>
+        <nav className="flex flex-col">
+          <h6 className="footer-title">Contact</h6>
+          <a className="link link-hover">524 Broadway , NYC</a>
+          <a className="link link-hover">+1 777 - 978 - 5570</a>
+        </nav>
+      </div>
+      <div className="container mx-auto px-8">
+        <hr className="my-12" />
+        <div className="flex flex-col lg:flex-row gap-6 justify-between ">
+          <p className="link link-hover">
+            @2023 HomeHaven. All Rights Reserved
+          </p>
+          <p className="link link-hover">Powered by HomeHaven</p>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;
