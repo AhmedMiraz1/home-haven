@@ -20,13 +20,12 @@ const Register = () => {
   const handelRegister = (e) => {
     e.preventDefault();
 
-    console.log(e.currentTarget);
     const form = new FormData(e.currentTarget);
     const name = form.get("name");
     const photo = form.get("photo");
     const email = form.get("email");
     const password = form.get("password");
-    console.log(name, photo, email, password);
+
 
     if (password.length < 6) {
       setRegisterError(
@@ -141,13 +140,14 @@ const Register = () => {
             className="input input-bordered relative"
             required
           />
-          <span
+         
+        </div>
+        <span
             className="absolute top-[80%] right-[20%] md:right-[29%] md:top-[81%] lg:top-[52%] lg:right-[37%]"
             onClick={() => setShowPassword(!showPassword)}
           >
             {showPassword ? <FaEyeSlash /> : <FaEye />}
           </span>
-        </div>
         <div className="form-control mt-6">
           <button className="btn bg-blue-600 text-slate-200 font-medium text-xl">
             Register

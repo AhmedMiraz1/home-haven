@@ -1,25 +1,24 @@
-// import { useContext } from "react";
+import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
-// import { AuthContext } from "../provider/AuthProvider";
-// import {  useNavigate } from "react-router-dom";
-
+import { AuthContext } from "../provider/AuthProvider";
 
 const UpdateProfile = () => {
-//   const {updateUserProfile}= useContext(AuthContext)
-//   const navigate = useNavigate();
-//   const handelUpdateProfile = e =>{
-// e.preventDefault()
-// const form = new FormData(e.currentTarget);
-// const name = form.get("name");
-// const photo = form.get("photo");
-// const email = form.get("email");
-// console.log(name,photo,  email, );
-// updateUserProfile(name, photo)
-// .then(() => {
-//   navigate("/");
-// });
-// .catch()
-//   }
+  const { user, updateUserProfile } = useContext(AuthContext);
+
+  // update profile
+  const handelUpdateProfile = async (e) => {
+    e.preventDefault();
+    
+    const form = new FormData(e.currentTarget);
+    e.target.reset()
+    const name = form.get("name");
+    const photo = form.get("photo");
+    console.log(name, photo);
+    const profile = await updateUserProfile(name, photo);
+
+    return profile;
+  };
+
   return (
     <div className="my-24">
       <Helmet>
@@ -27,14 +26,13 @@ const UpdateProfile = () => {
       </Helmet>
 
       <div className="flex flex-col md:flex-row gap-8 justify-between">
-        <div>
-          <h1 className="text-center font-medium md:font-bold lg:font-extrabold text-xl md:text-2xl lg:text-3xl text-green-600 my-8">
+        <div className="shadow-2xl p-4 rounded-xl">
+          <h1 className="text-center font-medium md:font-bold lg:font-extrabold text-xl md:text-2xl lg:text-3xl text-green-600 my-8 ">
             Update profile{" "}
           </h1>
 
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-stone-400 mx-auto my24">
-            <form //onSubmit={handelUpdateProfile()}
-             className="card-body">
+            <form onSubmit={handelUpdateProfile} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">name</span>
@@ -47,17 +45,7 @@ const UpdateProfile = () => {
                   required
                 />
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="input input-bordered"
-                  required
-                />
-              </div>{" "}
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">photo URL</span>
@@ -71,19 +59,22 @@ const UpdateProfile = () => {
                 />
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">save change </button>
+                <button className="btn btn-secondary text-xl">
+                  save change{" "}
+                </button>
               </div>
             </form>
           </div>
         </div>
-        <div>
-          <h1 className="text-center font-medium md:font-bold lg:font-extrabold text-xl md:text-2xl lg:text-3xl text-green-600 my-8">
+        <div className="flex flex-col items-center border-2 rounded-xl p-8 shadow-2xl">
+          <h1 className="text-center font-medium md:font-bold lg:font-extrabold text-xl md:text-2xl lg:text-3xl text-green-600 my-8 ">
             Current profile{" "}
           </h1>
-          <img className="rounded-full " src="" alt="" />
+          <img className="rounded-full w-32  " src={user?.photoURL} alt="" />
 
-          <p className="mt-12 mb-8">Name : </p>
-          <p>Email : </p>
+          <p className="mt-12 mb-8 text-lg md:text-xl font-medium md:font-bold ">
+            Name : {user?.displayName}{" "}
+          </p>
         </div>
       </div>
     </div>

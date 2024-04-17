@@ -32,6 +32,7 @@ const Login = () => {
     singInUser(email, password)
       .then((result) => {
         const user = result.user
+        console.log(user)
         if(user){
           navigate(location?.state || '/' )
         }
@@ -80,13 +81,14 @@ const Login = () => {
             className="input input-bordered relative"
             required
           />
-          <span
+         
+        </div>
+        <span
             className="absolute top-[54%] right-[18%] md:right-[23%] md:top-[54%] lg:top-[35%] lg:right-[37%]"
             onClick={() => setShowPassword(!showPassword)}
           >
             {showPassword ? <FaEyeSlash /> : <FaEye />}
           </span>
-        </div>
         <div className="form-control mt-6">
           <button className="btn bg-blue-600 text-slate-200 font-medium text-xl">
             Log In

@@ -7,10 +7,13 @@ import {
   GithubAuthProvider,
   signOut,
   updateProfile,
+  getAuth,
+  
+  
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 export const AuthContext = createContext(null);
 
@@ -21,7 +24,7 @@ const githubProvider = new GithubAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  console.log(user);
+ 
   const [loading, setLoading] = useState(true);
 
   // create user
@@ -30,13 +33,17 @@ const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  // update user profile 
-  const updateUserProfile = (name, photo ) =>{
-     return updateProfile(auth.currentUser, {
-        displayName: name,
-        photoURL: photo,
-      })
-  }
+  // update user profile
+  const updateUserProfile =  async (name, photo) => {
+    await updateProfile(auth.currentUser, {
+      
+      displayName: name,
+      photoURL: photo,
+    });
+    const result = getAuth()
+    return (result.currentUser);
+
+  };
 
   // sing in user
   const singInUser = (email, password) => {
@@ -45,9 +52,10 @@ const AuthProvider = ({ children }) => {
   };
 
   //google login
-  const googleLogin = () => {
+  const googleLogin = async() => {
     setLoading(true);
-    return signInWithPopup(auth, googleProvider);
+      const result =  await signInWithPopup(auth, googleProvider);
+      return result
   };
   //github login
   const githubLogin = () => {
@@ -79,7 +87,7 @@ const AuthProvider = ({ children }) => {
     githubLogin,
     logOut,
     loading,
-    updateUserProfile
+    updateUserProfile,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
@@ -87,6 +95,6 @@ const AuthProvider = ({ children }) => {
 };
 
 export default AuthProvider;
-AuthProvider.propTypes ={
-  children:PropTypes.node
-}
+AuthProvider.propTypes = {
+  children: PropTypes.node,
+};

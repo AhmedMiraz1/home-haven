@@ -50,7 +50,7 @@ const HouseDetails = () => {
             Facilities : 
             {facilities.map((facilities, idx) => (
               <span
-                className="mr-3 text-green-600 bg-[#23BE0A0D] px-3 py-2 rounded-xl font-medium shadow-2xl"
+                className="mr-4 text-green-600 bg-[#23BE0A0D] px-3 py-2 rounded-xl font-medium shadow-2xl my-2 block md:inline"
                 key={idx}
               >
               {facilities}

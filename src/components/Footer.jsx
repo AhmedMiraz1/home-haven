@@ -54,9 +54,9 @@ const Footer = () => {
         <hr className="my-12" />
         <div className="flex flex-col lg:flex-row gap-6 justify-between ">
           <p className="link link-hover">
-            @2023 HomeHaven. All Rights Reserved
+            @2023 HavenHomes. All Rights Reserved
           </p>
-          <p className="link link-hover">Powered by HomeHaven</p>
+          <p className="link link-hover">Powered by HavenHomes</p>
         </div>
       </div>
     </footer>
