@@ -59,7 +59,7 @@ const Navbar = () => {
             user? <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar ">
                 <div className="w-10 rounded-full">
-                  <img src={user?.photoURl || "https://i.ibb.co/sqQ9fdK/user-removebg-preview.png"} alt="Mehedi" />
+                  <img src={user?.photoURl || "https://i.ibb.co/tPR4hSx/mehedi1-Photo-Room-1.png"} alt="Mehedi" />
 
                 </div>
               </label>

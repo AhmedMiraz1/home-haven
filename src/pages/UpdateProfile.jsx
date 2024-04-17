@@ -1,6 +1,25 @@
+// import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
+// import { AuthContext } from "../provider/AuthProvider";
+// import {  useNavigate } from "react-router-dom";
+
 
 const UpdateProfile = () => {
+//   const {updateUserProfile}= useContext(AuthContext)
+//   const navigate = useNavigate();
+//   const handelUpdateProfile = e =>{
+// e.preventDefault()
+// const form = new FormData(e.currentTarget);
+// const name = form.get("name");
+// const photo = form.get("photo");
+// const email = form.get("email");
+// console.log(name,photo,  email, );
+// updateUserProfile(name, photo)
+// .then(() => {
+//   navigate("/");
+// });
+// .catch()
+//   }
   return (
     <div className="my-24">
       <Helmet>
@@ -14,7 +33,8 @@ const UpdateProfile = () => {
           </h1>
 
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-stone-400 mx-auto my24">
-            <form className="card-body">
+            <form //onSubmit={handelUpdateProfile()}
+             className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">name</span>

@@ -1,7 +1,10 @@
+import PropTypes from 'prop-types';
+
 import { Link } from "react-router-dom";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 AOS.init();
+
 
 const HouseCard = ({ house }) => {
   const { image, title, price, status, area, location, description, id } = house;
@@ -40,3 +43,7 @@ const HouseCard = ({ house }) => {
 };
 
 export default HouseCard;
+
+HouseCard.propTypes ={
+  house:PropTypes.object
+}
