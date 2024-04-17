@@ -5,6 +5,7 @@ import HouseCard from "../components/HouseCard";
 import { Helmet } from "react-helmet-async";
 
 
+
 const Home = () => {
    
  const [houses, setHouses]=useState([])

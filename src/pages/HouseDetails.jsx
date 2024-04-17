@@ -30,10 +30,10 @@ const HouseDetails = () => {
            
           </Helmet>
       <div className="flex flex-col gap-8 justify-between my-24 p-8 shadow-2xl rounded-xl">
-        <div className="w-full  animate__animated animate__animate__backInLeft animate__delay-1000">
-          <img className="rounded-xl shadow-2xl p-2  h-full  animate__animated animate__backInLeft animate__delay-2000" src={image} alt="" />
+        <div >
+          <img data-aos="fade-right" data-aos-duration="1000" className="rounded-xl shadow-2xl p-2  h-full " src={image} alt="" />
         </div>
-        <div className="w-full  h-full  animate__animated animate__backInRight animate__delay-2000">
+        <div data-aos="fade-left" data-aos-duration="2000"  className="w-full  h-full  ">
             <h1 className="text-xl md:text-2xl lg:text-3xl font-normal md:font-medium  lg:font-bold text-green-800">{title}</h1>
             <p className="text-lg md:text-xl text-gray-600 my-6">{description}</p>
             <div className="flex justify-between my-6">

@@ -2,6 +2,9 @@ import { Link, NavLink } from "react-router-dom";
 import 'animate.css';
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { CiLogout } from "react-icons/ci";
+import { MdOutlineUpdate } from "react-icons/md";
+import { VscDiffRenamed } from "react-icons/vsc";
     
 
 
@@ -31,7 +34,7 @@ const Navbar = () => {
           
             </ul>
           </div>
-          <Link to= '/' className="btn btn-ghost text-lg md:text-xl lg:text-2xl flex gap-0 text-primary font-medium md:font-semibold lg:font-extrabold  animate__animated animate__zoomIn animate__delay-1000">Haven<span className="text-pink-500">Homes</span></Link>
+          <Link to= '/' className="btn btn-ghost text-lg md:text-xl lg:text-2xl flex gap-0 text-primary font-medium md:font-semibold lg:font-extrabold  animate__animated animate__zoomIn animate__delay-2000">Haven<span className="text-pink-500">Homes</span></Link>
         </div>
         <div className="navbar-center hidden md:flex">
           <ul className="menu menu-horizontal px-1 gap-8">
@@ -56,23 +59,23 @@ const Navbar = () => {
             user? <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar ">
                 <div className="w-10 rounded-full">
-                  <img src={user?.photoURl || "https://i.ibb.co/G2TCGVY/mehedi1-Photo-Room-1.png"} alt="Mehedi" />
+                  <img src={user?.photoURl || "https://i.ibb.co/sqQ9fdK/user-removebg-preview.png"} alt="Mehedi" />
 
                 </div>
               </label>
               <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[3]  shadow-base-100 bg-slate-300 rounded-box w-52 border ">
-                <li  className="border px-6 py-2  rounded-xl">
-                 <button className="btn btn-sm btn-ghost  ">{user?.displayName || "User Not found"} </button>
+                <li  className="border px-6 py-2  rounded-xl flex flex-row ">
+                 <button className="btn btn-sm btn-ghost "> <span><VscDiffRenamed /></span>{user?.displayName || "User Not found"} </button>
                 </li>
-                <li className="my-4  border px-6 py-2  rounded-xl">
-                  <Link to="/updateProfile" className="btn btn-sm btn-ghost  ">
+                <li className="my-4  border px-6 py-2  rounded-xl flex flex-row">
+                  <Link to="/updateProfile" className="btn btn-sm btn-ghost  "><span><MdOutlineUpdate/></span>
                     Update profile
 
                   </Link>
                 </li>
                 <li  className="border px-6 py-2 rounded-xl">
                  <button onClick={logOut}
-                  className="btn btn-sm btn-ghost ">Logout </button>
+                  className="btn btn-sm btn-ghost "> <span><CiLogout /></span>Logout </button>
                 </li>
 
               </ul>

@@ -40,7 +40,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
-        setLogInError("Did not match your user ", toast.error("Did not match your user"), error.message);
+        setLogInError("Incorrect email password ", toast.error("Incorrect email password"), error.message);
       });
   };
   return (

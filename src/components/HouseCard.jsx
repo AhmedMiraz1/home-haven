@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 const HouseCard = ({ house }) => {
   const { image, title, price, status, area, location, description, id } = house;
   return (
     <div>
-      <div className=" p-6 rounded-lg h-full shadow-2xl">
+      <div data-aos="zoom-in-down"  data-aos-duration="1000" className=" p-6 rounded-lg h-full shadow-2xl">
         <div>
           <img
             className="rounded-lg w-full md:h-[20vh] lg:h-[20vh]"
