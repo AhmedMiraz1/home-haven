@@ -8,8 +8,6 @@ import {
   signOut,
   updateProfile,
   getAuth,
-  
-  
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
@@ -24,7 +22,7 @@ const githubProvider = new GithubAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
- 
+
   const [loading, setLoading] = useState(true);
 
   // create user
@@ -34,15 +32,13 @@ const AuthProvider = ({ children }) => {
   };
 
   // update user profile
-  const updateUserProfile =  async (name, photo) => {
+  const updateUserProfile = async (name, photo) => {
     await updateProfile(auth.currentUser, {
-      
       displayName: name,
       photoURL: photo,
     });
-    const result = getAuth()
-    return (result.currentUser);
-
+    const result = getAuth();
+    return result.currentUser;
   };
 
   // sing in user
@@ -52,10 +48,10 @@ const AuthProvider = ({ children }) => {
   };
 
   //google login
-  const googleLogin = async() => {
+  const googleLogin = async () => {
     setLoading(true);
-      const result =  await signInWithPopup(auth, googleProvider);
-      return result
+    const result = await signInWithPopup(auth, googleProvider);
+    return result;
   };
   //github login
   const githubLogin = () => {
@@ -72,10 +68,8 @@ const AuthProvider = ({ children }) => {
   // observer
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser(user);
-        setLoading(false);
-      }
+      setUser(user);
+      setLoading(false);
     });
     return () => unsubscribe();
   }, []);

@@ -24,6 +24,7 @@ const Login = () => {
     e.preventDefault();
 
     const form = new FormData(e.currentTarget);
+    e.target.reset()
     const email = form.get("email");
     const password = form.get("password");
     console.log(form);
@@ -84,7 +85,7 @@ const Login = () => {
          
         </div>
         <span
-            className="absolute top-[54%] right-[18%] md:right-[23%] md:top-[54%] lg:top-[35%] lg:right-[37%]"
+            className="absolute top-[54%] right-[18%] md:right-[23%] md:top-[54%] lg:top-[44%] lg:right-[37%]"
             onClick={() => setShowPassword(!showPassword)}
           >
             {showPassword ? <FaEyeSlash /> : <FaEye />}

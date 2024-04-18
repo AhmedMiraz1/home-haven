@@ -21,6 +21,7 @@ const Register = () => {
     e.preventDefault();
 
     const form = new FormData(e.currentTarget);
+    e.target.reset()
     const name = form.get("name");
     const photo = form.get("photo");
     const email = form.get("email");
@@ -143,7 +144,7 @@ const Register = () => {
          
         </div>
         <span
-            className="absolute top-[80%] right-[20%] md:right-[29%] md:top-[81%] lg:top-[52%] lg:right-[37%]"
+            className="absolute top-[80%] right-[20%] md:right-[29%] md:top-[81%] lg:top-[65%] lg:right-[37%]"
             onClick={() => setShowPassword(!showPassword)}
           >
             {showPassword ? <FaEyeSlash /> : <FaEye />}
